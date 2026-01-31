@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://b48hx24kxhkc0"]
+
+[ext_resource type="Texture2D" uid="uid://dtu4etb6ycugi" path="res://icon.svg" id="1_kvpf2"]
+[ext_resource type="Script" uid="uid://dlvhmli3yke8n" path="res://scenes/character/character_render.gd" id="1_xf4xj"]
+[ext_resource type="Texture2D" uid="uid://bwhsj0ropr0i2" path="res://assets/shank.png" id="2_xf4xj"]
+
+[sub_resource type="Animation" id="Animation_xf4xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ObjectPivot/Object:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, -6.000002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ObjectPivot/Object:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4660029]
+}
+
+[sub_resource type="Animation" id="Animation_28yyx"]
+resource_name = "melee_attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ObjectPivot/Object:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666666, 0.23333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(79, -6.000002), Vector2(68.00001, -34), Vector2(82.00001, 55.000004), Vector2(79, -6.000002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ObjectPivot/Object:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666666, 0.23333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.4660029, -0.4267209, 2.4453344, 0.4660029]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"weapon_swipe"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2l53l"]
+_data = {
+&"RESET": SubResource("Animation_xf4xj"),
+&"melee_attack": SubResource("Animation_28yyx")
+}
+
+[node name="CharacterRender" type="Node2D" unique_id=1285145215]
+script = ExtResource("1_xf4xj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1792241734]
+libraries/ = SubResource("AnimationLibrary_2l53l")
+
+[node name="Character" type="Sprite2D" parent="." unique_id=664579804]
+texture = ExtResource("1_kvpf2")
+
+[node name="ObjectPivot" type="Node2D" parent="." unique_id=1132893187]
+unique_name_in_owner = true
+
+[node name="Object" type="Sprite2D" parent="ObjectPivot" unique_id=1641501413]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(79, -6.000002)
+rotation = 0.4660029
+scale = Vector2(2, 2)
+texture = ExtResource("2_xf4xj")

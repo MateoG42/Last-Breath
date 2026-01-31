@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://qcr7ymiyk2ff"]
+
+[ext_resource type="PackedScene" uid="uid://bn0xhuc4th847" path="res://scenes/character/player.tscn" id="1_jbqir"]
+[ext_resource type="Texture2D" uid="uid://ct3jpytw6v0k0" path="res://assets/prototyping/Light/texture_08.png" id="1_yautc"]
+[ext_resource type="PackedScene" uid="uid://cmsakc5ydplqt" path="res://scenes/map_objects/hit_dummy/hit_dummy.tscn" id="2_fr1um"]
+[ext_resource type="Texture2D" uid="uid://dl3g1bgmvbwc1" path="res://assets/prototyping/Light/texture_11.png" id="4_v45ci"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yautc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fr1um"]
+sky_material = SubResource("ProceduralSkyMaterial_yautc")
+
+[sub_resource type="Environment" id="Environment_v45ci"]
+background_mode = 2
+sky = SubResource("Sky_fr1um")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fr1um"]
+albedo_texture = ExtResource("1_yautc")
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yautc"]
+data = PackedVector3Array(-5, -0.5, 5, -5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, -5, -5, -0.5, 5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, 5, 5, 0.5, 5, -5, 0.5, 5, -5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, 5, -0.5, -5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, -0.5, -5, 5, -0.5, 5, 5, 0.5, 5, 5, -0.5, -5, 5, 0.5, -5, -5, 0.5, -5, -5, 0.5, -5, 5, 0.5, -5, 5, 0.5, 5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, -5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48ne7"]
+albedo_texture = ExtResource("4_v45ci")
+
+[node name="Map" type="Node3D" unique_id=406985348]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=611855784]
+environment = SubResource("Environment_v45ci")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1478382528]
+transform = Transform3D(0.43365905, -0.69026506, 0.57920116, 0, 0.64278764, 0.76604444, -0.90107703, -0.3322021, 0.2787507, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." unique_id=572186867 instance=ExtResource("1_jbqir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="HitDummy" parent="." unique_id=801627438 instance=ExtResource("2_fr1um")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9014468, 0.5, 1.5689223)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2147361608]
+collision_layer = 2
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D" unique_id=1116642753]
+material_override = SubResource("StandardMaterial3D_fr1um")
+size = Vector3(10, 1, 10)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2022934229]
+shape = SubResource("ConcavePolygonShape3D_yautc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1935790833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01034, 0.97852516, 2.464189)
+material_override = SubResource("StandardMaterial3D_48ne7")

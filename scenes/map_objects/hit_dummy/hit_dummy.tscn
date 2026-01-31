@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmsakc5ydplqt"]
+
+[ext_resource type="Texture2D" uid="uid://dtu4etb6ycugi" path="res://icon.svg" id="1_rswco"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sv6oj"]
+height = 1.0
+
+[node name="HitDummy" type="StaticBody3D" unique_id=801627438]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=936019185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_sv6oj")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1866919910]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 0.2188558, 0)
+modulate = Color(0.71477765, 0.4046694, 0.10610274, 1)
+alpha_cut = 2
+texture = ExtResource("1_rswco")
