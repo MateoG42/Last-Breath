@@ -3,11 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnjomyyblin84"
-path.s3tc="res://.godot/imported/Test_0.png-26ef5ea729a357f043dc90dce23dfd24.s3tc.ctex"
-path.etc2="res://.godot/imported/Test_0.png-26ef5ea729a357f043dc90dce23dfd24.etc2.ctex"
+path="res://.godot/imported/Test_0.png-26ef5ea729a357f043dc90dce23dfd24.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "f1be31377c35819e4043657cde8918cf"
@@ -16,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/Test_0.png"
-dest_files=["res://.godot/imported/Test_0.png-26ef5ea729a357f043dc90dce23dfd24.s3tc.ctex", "res://.godot/imported/Test_0.png-26ef5ea729a357f043dc90dce23dfd24.etc2.ctex"]
+dest_files=["res://.godot/imported/Test_0.png-26ef5ea729a357f043dc90dce23dfd24.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

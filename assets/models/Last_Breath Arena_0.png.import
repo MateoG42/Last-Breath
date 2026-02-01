@@ -3,11 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnmy35ec5i433"
-path.s3tc="res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.s3tc.ctex"
-path.etc2="res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.etc2.ctex"
+path="res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "68b64d1bee51ca45fb6874fa6fce13df"
@@ -16,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/Last_Breath Arena_0.png"
-dest_files=["res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.s3tc.ctex", "res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.etc2.ctex"]
+dest_files=["res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
