@@ -9,7 +9,6 @@ extends FogVolume
 func _ready():
 	update_size(starting_size)
 	$Timer.wait_time = wait_time
-	get_parent().game_started.connect(start)
 
 
 func _process(_delta: float) -> void:
@@ -29,9 +28,9 @@ func update_size(radius):
 
 func shrink():
 	var shrink_tween = get_tree().create_tween()
-	shrink_tween.parallel().tween_property($SafeFog, 'size:x', max($SafeFog.size.x - shrink_amount, 0), 1)
-	shrink_tween.parallel().tween_property($SafeFog, 'size:z', max($SafeFog.size.z - shrink_amount, 0), 1)
-	shrink_tween.parallel().tween_property(%SafeShape, 'shape:radius', max(%SafeShape.shape.radius - shrink_amount/2.0, 0), 1)
+	shrink_tween.parallel().tween_property($SafeFog, 'size:x', max($SafeFog.size.x - shrink_amount * 2, 0), 3)
+	shrink_tween.parallel().tween_property($SafeFog, 'size:z', max($SafeFog.size.z - shrink_amount * 2, 0), 3)
+	shrink_tween.parallel().tween_property(%SafeShape, 'shape:radius', max(%SafeShape.shape.radius - shrink_amount, 0), 3)
 
 
 func _on_exit_fog_safety(body: Node3D):

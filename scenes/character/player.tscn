@@ -63,5 +63,7 @@ shape = SubResource("SphereShape3D_tum32")
 [node name="DeathTimer" type="Timer" parent="." unique_id=1718925937]
 wait_time = 5.0
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=361808191]
+
 [connection signal="swipe" from="CharaterSubviewport/CharacterRender" to="." method="_on_character_render_swipe"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

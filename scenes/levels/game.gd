@@ -8,6 +8,7 @@ func _ready() -> void:
 	audio = $AudioStreamPlayer
 	audio.stream = preload('res://assets/audio/songs/Last breath menu_lobby.mp3')
 	audio.play()
+	game_started.connect($MapFog.start)
 
 @rpc("authority", "call_local")
 func start_match():
@@ -18,6 +19,7 @@ func start_match():
 
 
 func _on_start_game_pressed() -> void:
+	%StartGame.visible = false
 	start_match.rpc()
 
 
