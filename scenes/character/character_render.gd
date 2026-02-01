@@ -5,10 +5,13 @@ signal swipe
 @onready var sprite = $PlayerSprite
 var last_direction
 
+@export var masked: bool = false
+
 @export var current_weapon: WeaponData.WeaponID = WeaponData.WeaponID.FIST:
 	set(new_id):
 		current_weapon = new_id
 		%Weapon.texture = weapon_textures[current_weapon]
+		
 var weapon_textures = [null, preload("res://assets/shank.png")]
 
 
@@ -16,13 +19,17 @@ func _process(_delta: float) -> void:
 	if is_multiplayer_authority():
 		var dir = Input.get_vector('left', 'right', 'down', 'up')
 		if dir != Vector2.ZERO:
-			sprite.play("running")
-		else :
-			sprite.play("idle")
+			var an_name = 'running'
+			if masked: an_name += '_mask'
+			sprite.play(an_name)
+		else:
+			var an_name = 'idle'
+			if masked: an_name += '_mask'
+			sprite.play(an_name)
 
 
 func set_mask(vis):
-	%Mask.visible = vis
+	masked = vis
 
 
 func unequip():

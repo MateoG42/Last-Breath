@@ -6,7 +6,6 @@ extends Area3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await $Sprite3D.ready
 	$Sprite3D.texture = item_data.sprite
 
 

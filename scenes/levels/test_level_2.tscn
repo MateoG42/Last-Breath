@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bw5iw6ye75ly4" path="res://scenes/networking/network_handler.gd" id="5_rfcif"]
 [ext_resource type="PackedScene" uid="uid://c461rnyjdl6om" path="res://scenes/map_objects/map_fog.tscn" id="6_cr05x"]
 [ext_resource type="PackedScene" uid="uid://dmmpdore6qt8e" path="res://scenes/map_objects/knife.tscn" id="8_nwrgp"]
+[ext_resource type="PackedScene" uid="uid://d0sf5lyrc2p63" path="res://scenes/map_objects/mask.tscn" id="9_g3mff"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmsp8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -185,6 +186,9 @@ text = "Server"
 [node name="ClientBtn" type="Button" parent="Control/VBoxContainer" unique_id=172671511]
 layout_mode = 2
 text = "Client"
+
+[node name="KnifePicup3" parent="." unique_id=105749903 instance=ExtResource("9_g3mff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5926733, -4.7683716e-07, 0.8092303)
 
 [connection signal="pressed" from="Control/VBoxContainer/ServerBtn" to="NetworkHandler" method="_on_server_btn_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/ServerBtn" to="Control" method="hide"]

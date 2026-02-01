@@ -11,7 +11,8 @@ const PUNCH_RANGE = 0.3
 
 var item_data = null
 
-var pickup_scene = preload('res://scenes/map_objects/knife.tscn')
+var weapon_pickups = [null, preload('res://scenes/map_objects/knife.tscn')]
+var mask_pickup = preload("res://scenes/map_objects/mask.tscn")
 
 
 func _enter_tree() -> void:
@@ -104,13 +105,18 @@ func drop_item():
 	character_render.unequip()
 	%MeleeHitbox/AttackCollision.shape.radius = PUNCH_RANGE
 	
-	spawn_item.rpc(multiplayer.get_unique_id())
+	spawn_item.rpc(multiplayer.get_unique_id(), item_data)
 	
 	item_data = null
 
 @rpc('call_local')
-func spawn_item(pid):
-	var item: Pickup = pickup_scene.instantiate()
+func spawn_item(pid, item_dat):
+	var item: Pickup
+	if item_dat is WeaponData:
+		item = weapon_pickups[item_dat.weapon_id].instantiate()
+	elif item_dat is MaskData:
+		item = mask_pickup.instantiate()
+		
 	item.set_multiplayer_authority(pid)
 	get_parent().add_child(item)
 	item.global_position = global_position + Vector3(0, 0, 1)

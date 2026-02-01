@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d0sf5lyrc2p63"]
+
+[ext_resource type="Script" uid="uid://bjltukac8lrru" path="res://scenes/map_objects/pickup.gd" id="1_uocgl"]
+[ext_resource type="Resource" uid="uid://cootd23u4xk7k" path="res://resources/pickup_data/mask.tres" id="2_uocgl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v45ci"]
+height = 0.5
+radius = 0.25
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_aqvoi"]
+
+[node name="MaskPicup" type="Area3D" unique_id=947803268]
+collision_layer = 4
+script = ExtResource("1_uocgl")
+item_data = ExtResource("2_uocgl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2001856635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_v45ci")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1518685650]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.34824497, 0)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=532748008]
+replication_config = SubResource("SceneReplicationConfig_aqvoi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
