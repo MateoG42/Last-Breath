@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjvela4icftqv"
-path="res://.godot/imported/Test.glb-3a8d70e2d53580e1602e1ab8f6b600ce.scn"
+uid="uid://dr21hdeyf4mj0"
+path="res://.godot/imported/Crate.glb-4bdeb9d82af74dd4b9d164744cf5eea8.scn"
 
 [deps]
 
-source_file="res://scenes/levels/Test.glb"
-dest_files=["res://.godot/imported/Test.glb-3a8d70e2d53580e1602e1ab8f6b600ce.scn"]
+source_file="res://assets/models/Crate.glb"
+dest_files=["res://.godot/imported/Crate.glb-4bdeb9d82af74dd4b9d164744cf5eea8.scn"]
 
 [params]
 

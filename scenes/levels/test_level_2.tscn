@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cs41kx3cngy85"]
 
-[ext_resource type="Texture2D" uid="uid://bnjomyyblin84" path="res://scenes/levels/Test_0.png" id="1_5idrc"]
+[ext_resource type="Texture2D" uid="uid://bnjomyyblin84" path="res://assets/models/Test_0.png" id="1_5idrc"]
 [ext_resource type="Script" uid="uid://d3kb5g8e0jwtf" path="res://scenes/networking/map_spawner.gd" id="1_qd2ch"]
 [ext_resource type="PackedScene" uid="uid://bn0xhuc4th847" path="res://scenes/character/player.tscn" id="2_goahl"]
 [ext_resource type="PackedScene" uid="uid://iq7j8ho3twc3" path="res://scenes/map_objects/pickup.tscn" id="3_nwrgp"]

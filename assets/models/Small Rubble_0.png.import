@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjomyyblin84"
-path.s3tc="res://.godot/imported/Test_0.png-fe61076f45db43a2bcca4de4bb080379.s3tc.ctex"
+uid="uid://bw78ntpvn52tn"
+path.s3tc="res://.godot/imported/Small Rubble_0.png-be7d27b466e4a51dd1b19aae3ac760bb.s3tc.ctex"
+path.etc2="res://.godot/imported/Small Rubble_0.png-be7d27b466e4a51dd1b19aae3ac760bb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f1be31377c35819e4043657cde8918cf"
+"md5": "d54686aea796ca8b1d6894ab308cde7f"
 }
 
 [deps]
 
-source_file="res://scenes/levels/Test_0.png"
-dest_files=["res://.godot/imported/Test_0.png-fe61076f45db43a2bcca4de4bb080379.s3tc.ctex"]
+source_file="res://assets/models/Small Rubble_0.png"
+dest_files=["res://.godot/imported/Small Rubble_0.png-be7d27b466e4a51dd1b19aae3ac760bb.s3tc.ctex", "res://.godot/imported/Small Rubble_0.png-be7d27b466e4a51dd1b19aae3ac760bb.etc2.ctex"]
 
 [params]
 

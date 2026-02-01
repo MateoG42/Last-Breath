@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtu4etb6ycugi"
-path.s3tc="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
-path.etc2="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"
+uid="uid://cj5re008t8swd"
+path.s3tc="res://.godot/imported/Small Rubble_1.png-271603dbb87a29ef5e04a822001e2ca9.s3tc.ctex"
+path.etc2="res://.godot/imported/Small Rubble_1.png-271603dbb87a29ef5e04a822001e2ca9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "5c0eede30d7405cf68ebd26a6e255d6a"
+}
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex", "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"]
+source_file="res://assets/models/Small Rubble_1.png"
+dest_files=["res://.godot/imported/Small Rubble_1.png-271603dbb87a29ef5e04a822001e2ca9.s3tc.ctex", "res://.godot/imported/Small Rubble_1.png-271603dbb87a29ef5e04a822001e2ca9.etc2.ctex"]
 
 [params]
 
@@ -40,6 +43,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

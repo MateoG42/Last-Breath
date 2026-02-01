@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://6ojwbom667iy"
 path.s3tc="res://.godot/imported/texture_05.png-ca65088c8ac1795569af637993190541.s3tc.ctex"
+path.etc2="res://.godot/imported/texture_05.png-ca65088c8ac1795569af637993190541.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/prototyping/Light/texture_05.png"
-dest_files=["res://.godot/imported/texture_05.png-ca65088c8ac1795569af637993190541.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture_05.png-ca65088c8ac1795569af637993190541.s3tc.ctex", "res://.godot/imported/texture_05.png-ca65088c8ac1795569af637993190541.etc2.ctex"]
 
 [params]
 

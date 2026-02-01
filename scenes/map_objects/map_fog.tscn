@@ -9,15 +9,17 @@ albedo = Color(0.34796253, 0.59291714, 0.29631886, 1)
 density = -8.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cyt5c"]
-radius = 7.0
+radius = 15.0
 
 [node name="MapFog" type="FogVolume" unique_id=1947249419]
 shape = 4
 material = SubResource("FogMaterial_cyt5c")
 script = ExtResource("1_j4y02")
+shrink_amount = null
+timer_time = null
 
 [node name="SafeFog" type="FogVolume" parent="." unique_id=658012223]
-size = Vector3(15, 10, 15)
+size = Vector3(30, 10, 30)
 shape = 2
 material = SubResource("FogMaterial_7x1jh")
 
@@ -29,5 +31,9 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_cyt5c")
 
+[node name="Timer" type="Timer" parent="." unique_id=1570859469]
+autostart = true
+
 [connection signal="body_entered" from="SafeZone" to="." method="_on_enter_fog_safety"]
 [connection signal="body_exited" from="SafeZone" to="." method="_on_exit_fog_safety"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

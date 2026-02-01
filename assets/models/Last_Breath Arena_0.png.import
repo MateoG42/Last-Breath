@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtu4etb6ycugi"
-path.s3tc="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
-path.etc2="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"
+uid="uid://cnmy35ec5i433"
+path.s3tc="res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.s3tc.ctex"
+path.etc2="res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "68b64d1bee51ca45fb6874fa6fce13df"
+}
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex", "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"]
+source_file="res://assets/models/Last_Breath Arena_0.png"
+dest_files=["res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.s3tc.ctex", "res://.godot/imported/Last_Breath Arena_0.png-0a61f6d99266731f5649f2b2b6e2a255.etc2.ctex"]
 
 [params]
 
@@ -40,6 +43,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

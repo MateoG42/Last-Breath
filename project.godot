@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Last Breath"
-run/main_scene="uid://qcr7ymiyk2ff"
+run/main_scene="uid://o2id733icki8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -61,3 +61,4 @@ drop_item={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

@@ -3,12 +3,26 @@ extends MultiplayerSpawner
 @export var network_player: PackedScene
 @export var network_item: PackedScene
 
+var spawns: Array
+
 func _ready() -> void:
-	multiplayer.peer_connected.connect(spawn_player)
+	spawns = get_children()
+	
+	spawn_function = spawn_player
+	
+	multiplayer.peer_connected.connect(
+		func(pid):
+			print('peer ' + str(pid) + ' joined!')
+			spawn(pid)
+	)
 
 
-func spawn_player(id: int) -> void:
-	if multiplayer.is_server():
-		var player = network_player.instantiate()
-		player.name = str(id)
-		get_node(spawn_path).call_deferred('add_child', player)
+func spawn_player(id: int):
+	var location = spawns.pick_random()
+	spawns.erase(location)
+	
+	var player = network_player.instantiate()
+	player.name = str(id)
+	player.global_position = location.global_position
+	
+	return player

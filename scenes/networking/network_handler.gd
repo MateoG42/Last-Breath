@@ -2,24 +2,37 @@ extends Node
 
 @export var spawner: MultiplayerSpawner
 
-const IP_ADDRESS: String = 'localhost'
-const PORT: int = 42069
+var ip_address: String = 'localhost'
+var port: int = 42069
 
 var peer: ENetMultiplayerPeer
 
 
 func start_server() -> void:
+	get_ip_and_port()
+	
 	peer = ENetMultiplayerPeer.new()
-	peer.create_server(PORT)
+	peer.create_server(port)
 	multiplayer.multiplayer_peer = peer
 	
-	spawner.spawn_player(multiplayer.get_unique_id())
+	spawner.spawn(multiplayer.get_unique_id())
 
 
 func start_client() -> void:
+	get_ip_and_port()
+	
 	peer = ENetMultiplayerPeer.new()
-	peer.create_client(IP_ADDRESS, PORT)
+	peer.create_client(ip_address, port)
 	multiplayer.multiplayer_peer = peer
+
+
+func get_ip_and_port():
+	var ip_txt: String = %IP.text
+	if ip_txt != '':
+		ip_address = ip_txt
+	var port_txt: String = %Port.text
+	if port_txt != '':
+		port = port_txt.to_int()
 
 
 func _on_server_btn_pressed() -> void:
