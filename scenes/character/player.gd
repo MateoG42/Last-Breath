@@ -10,9 +10,13 @@ extends CharacterBody3D
 const PUNCH_RANGE = 0.3
 
 var item_data = null
+@export var held_item_id: WeaponData.WeaponID
 
-var weapon_pickups = [null, preload('res://scenes/map_objects/knife.tscn')]
-var mask_pickup = preload("res://scenes/map_objects/mask.tscn")
+var item_pickups = [null, preload('res://scenes/map_objects/knife.tscn'), preload("res://scenes/map_objects/mask.tscn")]
+
+var game_started = false
+
+var in_fog = false
 
 
 func _enter_tree() -> void:
@@ -32,10 +36,16 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("drop_item"):
 			if item_data:
 				drop_item()
+				
+		if in_fog and item_data is not MaskData:
+			if $DeathTimer.is_stopped():
+				$DeathTimer.start()
+		else:
+			$DeathTimer.stop()
 
 
 func _physics_process(_delta: float) -> void:
-	if is_multiplayer_authority():
+	if is_multiplayer_authority() and game_started:
 		handle_movement()
 
 
@@ -105,35 +115,53 @@ func drop_item():
 	character_render.unequip()
 	%MeleeHitbox/AttackCollision.shape.radius = PUNCH_RANGE
 	
-	spawn_item.rpc(multiplayer.get_unique_id(), item_data)
+	spawn_item.rpc(multiplayer.get_unique_id(), held_item_id)
 	
 	item_data = null
 
 @rpc('call_local')
-func spawn_item(pid, item_dat):
-	var item: Pickup
-	if item_dat is WeaponData:
-		item = weapon_pickups[item_dat.weapon_id].instantiate()
-	elif item_dat is MaskData:
-		item = mask_pickup.instantiate()
-		
-	item.set_multiplayer_authority(pid)
+func spawn_item(pid, item_id):
+	print('item_id ', item_id)
+	var item: Pickup = item_pickups[item_id].instantiate()
+
 	get_parent().add_child(item)
+	item.set_multiplayer_authority(pid)
+	
 	item.global_position = global_position + Vector3(0, 0, 1)
 
 
 func pickup_weapon(weapon_dat: WeaponData):
-	character_render.set_weapon(weapon_dat.weapon_id)
+	held_item_id = weapon_dat.item_id
+	character_render.set_weapon(weapon_dat.item_id)
+	
 	%MeleeHitbox/AttackCollision.shape.radius = weapon_dat.attack_range
 
 
 func pickup_mask(_item: MaskData):
+	held_item_id = ItemData.WeaponID.MASK
 	character_render.set_mask(true)
 
 
 func exit_fog_safety():
 	print('exited safety')
-
+	in_fog = true
+	
 
 func enter_fog_safety():
 	print('entered safety')
+	in_fog = false
+
+
+@rpc('call_local')
+func die():
+	if is_multiplayer_authority():
+		get_parent().set_camera()
+	queue_free()
+
+
+func _on_game_started():
+	game_started = true
+
+
+func _on_death_timer_timeout() -> void:
+	die.rpc()

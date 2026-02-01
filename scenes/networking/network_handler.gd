@@ -16,6 +16,8 @@ func start_server() -> void:
 	multiplayer.multiplayer_peer = peer
 	
 	spawner.spawn(multiplayer.get_unique_id())
+	%StartGame.visible = true
+	%MenuContainer.visible = false
 
 
 func start_client() -> void:
@@ -24,6 +26,8 @@ func start_client() -> void:
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip_address, port)
 	multiplayer.multiplayer_peer = peer
+	
+	%MenuContainer.visible = false
 
 
 func get_ip_and_port():

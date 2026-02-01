@@ -9,11 +9,16 @@ extends FogVolume
 func _ready():
 	update_size(starting_size)
 	$Timer.wait_time = wait_time
+	get_parent().game_started.connect(start)
 
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		update_size(starting_size)
+
+
+func start():
+	$Timer.start()
 
 
 func update_size(radius):

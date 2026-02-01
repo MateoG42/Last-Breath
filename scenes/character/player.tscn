@@ -7,6 +7,9 @@
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:held_item_id")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tum32"]
 viewport_path = NodePath("CharaterSubviewport")
@@ -57,4 +60,8 @@ collision_layer = 0
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0.43920028, 0, 0)
 shape = SubResource("SphereShape3D_tum32")
 
+[node name="DeathTimer" type="Timer" parent="." unique_id=1718925937]
+wait_time = 5.0
+
 [connection signal="swipe" from="CharaterSubviewport/CharacterRender" to="." method="_on_character_render_swipe"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

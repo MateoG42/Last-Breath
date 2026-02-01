@@ -25,4 +25,6 @@ func spawn_player(id: int):
 	player.name = str(id)
 	player.global_position = location.global_position
 	
+	get_parent().game_started.connect(player._on_game_started)
+	
 	return player

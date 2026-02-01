@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://o2id733icki8"]
 
 [ext_resource type="Script" uid="uid://d3kb5g8e0jwtf" path="res://scenes/networking/map_spawner.gd" id="1_rloe5"]
+[ext_resource type="Script" uid="uid://crso57kyv71wo" path="res://scenes/levels/game.gd" id="1_sdqdp"]
 [ext_resource type="PackedScene" uid="uid://bn0xhuc4th847" path="res://scenes/character/player.tscn" id="2_yh3a2"]
 [ext_resource type="PackedScene" uid="uid://iq7j8ho3twc3" path="res://scenes/map_objects/pickup.tscn" id="3_0fe2p"]
 [ext_resource type="PackedScene" uid="uid://csrvuayd6bf58" path="res://scenes/networking/network_handler.tscn" id="4_b88dt"]
@@ -287,6 +288,7 @@ shadow_mesh = SubResource("ArrayMesh_ecqv8")
 data = PackedVector3Array(0.1875, 0.2188, -0.0938, 0.1875, 0.0313, 0.0938, 0.1875, 0.2188, 0.0938, 0.1875, 0.2188, -0.0938, 0.1875, 0.0313, -0.0938, 0.1875, 0.0313, 0.0938, -0.1875, 0.0313, 0.0938, -0.1875, 0.2188, -0.0938, -0.1875, 0.2188, 0.0938, -0.1875, 0.0313, 0.0938, -0.1875, 0.0313, -0.0938, -0.1875, 0.2188, -0.0938, -0.1875, 0.2188, 0.0938, 0.1875, 0.2188, -0.0938, 0.1875, 0.2188, 0.0938, -0.1875, 0.2188, 0.0938, -0.1875, 0.2188, -0.0938, 0.1875, 0.2188, -0.0938, 0.1875, 0.0313, -0.0938, -0.1875, 0.0313, 0.0938, 0.1875, 0.0313, 0.0938, 0.1875, 0.0313, -0.0938, -0.1875, 0.0313, -0.0938, -0.1875, 0.0313, 0.0938, 0.1875, 0.0313, 0.0938, -0.1875, 0.2188, 0.0938, 0.1875, 0.2188, 0.0938, 0.1875, 0.0313, 0.0938, -0.1875, 0.0313, 0.0938, -0.1875, 0.2188, 0.0938, -0.1875, 0.2188, -0.0938, 0.1875, 0.0313, -0.0938, 0.1875, 0.2188, -0.0938, -0.1875, 0.2188, -0.0938, -0.1875, 0.0313, -0.0938, 0.1875, 0.0313, -0.0938, 0.3175, 0.7226, -0.6083, 0.5026, -0.77169997, -1.3316, 0.3629, -0.644, -0.3836, 0.3175, 0.7226, -0.6083, 0.28959998, 0.9924, -1.1618, 0.5026, -0.77169997, -1.3316, -1.5238, -0.7794, -0.47379997, -0.89919996, 0.731, 0.0771, -1.032, -0.6139, -0.19909999, -1.5238, -0.7794, -0.47379997, -1.4514999, 0.8878, -0.4292, -0.89919996, 0.731, 0.0771, -0.4093, -0.24509999, 0.16219999, 0.218, 0.4682, -0.1391, 0.2841, -0.1051, 0.1127, -0.4093, -0.24509999, 0.16219999, -0.3654, 0.50159997, 0.2453, 0.218, 0.4682, -0.1391, -0.0297, 0.5995, -1.0473, -0.8581, -0.2653, -0.7355, -0.0525, -0.2747, -1.0770999, -0.0297, 0.5995, -1.0473, -0.83529997, 0.6088, -0.7057, -0.8581, -0.2653, -0.7355, 0.5026, -0.77169997, -1.3316, -1.032, -0.6139, -0.19909999, 0.3629, -0.644, -0.3836, 0.5026, -0.77169997, -1.3316, -1.5238, -0.7794, -0.47379997, -1.032, -0.6139, -0.19909999, -0.89919996, 0.731, 0.0771, 0.28959998, 0.9924, -1.1618, 0.3175, 0.7226, -0.6083, -0.89919996, 0.731, 0.0771, -1.4514999, 0.8878, -0.4292, 0.28959998, 0.9924, -1.1618, 0.3175, 0.7226, -0.6083, -0.3654, 0.50159997, 0.2453, -0.89919996, 0.731, 0.0771, 0.3175, 0.7226, -0.6083, 0.218, 0.4682, -0.1391, -0.3654, 0.50159997, 0.2453, -1.4514999, 0.8878, -0.4292, -0.0297, 0.5995, -1.0473, 0.28959998, 0.9924, -1.1618, -1.4514999, 0.8878, -0.4292, -0.83529997, 0.6088, -0.7057, -0.0297, 0.5995, -1.0473, -0.89919996, 0.731, 0.0771, -0.4093, -0.24509999, 0.16219999, -1.032, -0.6139, -0.19909999, -0.89919996, 0.731, 0.0771, -0.3654, 0.50159997, 0.2453, -0.4093, -0.24509999, 0.16219999, -1.5238, -0.7794, -0.47379997, -0.83529997, 0.6088, -0.7057, -1.4514999, 0.8878, -0.4292, -1.5238, -0.7794, -0.47379997, -0.8581, -0.2653, -0.7355, -0.83529997, 0.6088, -0.7057, -1.032, -0.6139, -0.19909999, 0.2841, -0.1051, 0.1127, 0.3629, -0.644, -0.3836, -1.032, -0.6139, -0.19909999, -0.4093, -0.24509999, 0.16219999, 0.2841, -0.1051, 0.1127, 0.5026, -0.77169997, -1.3316, -0.8581, -0.2653, -0.7355, -1.5238, -0.7794, -0.47379997, 0.5026, -0.77169997, -1.3316, -0.0525, -0.2747, -1.0770999, -0.8581, -0.2653, -0.7355, 0.3629, -0.644, -0.3836, 0.218, 0.4682, -0.1391, 0.3175, 0.7226, -0.6083, 0.3629, -0.644, -0.3836, 0.2841, -0.1051, 0.1127, 0.218, 0.4682, -0.1391, 0.28959998, 0.9924, -1.1618, -0.0525, -0.2747, -1.0770999, 0.5026, -0.77169997, -1.3316, 0.28959998, 0.9924, -1.1618, -0.0297, 0.5995, -1.0473, -0.0525, -0.2747, -1.0770999, -0.67649996, 0.1757, 0.0023, -0.8357, 0.0052, -0.1237, -0.72709996, -0.0028, 0.0289, -0.67649996, 0.1757, 0.0023, -0.7852, 0.1838, -0.1503, -0.8357, 0.0052, -0.1237, -1.1241, 0.1184, 0.087699994, -0.9648, 0.2889, 0.2136, -1.0153999, 0.1104, 0.2403, -1.1241, 0.1184, 0.087699994, -1.0734999, 0.297, 0.0611, -0.9648, 0.2889, 0.2136, -1.0153999, 0.1104, 0.2403, -0.67649996, 0.1757, 0.0023, -0.72709996, -0.0028, 0.0289, -1.0153999, 0.1104, 0.2403, -0.9648, 0.2889, 0.2136, -0.67649996, 0.1757, 0.0023, -0.7852, 0.1838, -0.1503, -1.1241, 0.1184, 0.087699994, -0.8357, 0.0052, -0.1237, -0.7852, 0.1838, -0.1503, -1.0734999, 0.297, 0.0611, -1.1241, 0.1184, 0.087699994, -0.8357, 0.0052, -0.1237, -1.0153999, 0.1104, 0.2403, -0.72709996, -0.0028, 0.0289, -0.8357, 0.0052, -0.1237, -1.1241, 0.1184, 0.087699994, -1.0153999, 0.1104, 0.2403, -0.9648, 0.2889, 0.2136, -0.7852, 0.1838, -0.1503, -0.67649996, 0.1757, 0.0023, -0.9648, 0.2889, 0.2136, -1.0734999, 0.297, 0.0611, -0.7852, 0.1838, -0.1503, -0.3119, 0.6533, -0.1841, -0.5588, 0.57409996, -0.2393, -0.459, 0.5972, -0.0823, -0.3119, 0.6533, -0.1841, -0.41169998, 0.63019997, -0.34109998, -0.5588, 0.57409996, -0.2393, -0.6778, 0.92899996, -0.21589999, -0.43089998, 1.0081999, -0.1607, -0.578, 0.9521, -0.0589, -0.6778, 0.92899996, -0.21589999, -0.53069997, 0.98499995, -0.3177, -0.43089998, 1.0081999, -0.1607, -0.578, 0.9521, -0.0589, -0.3119, 0.6533, -0.1841, -0.459, 0.5972, -0.0823, -0.578, 0.9521, -0.0589, -0.43089998, 1.0081999, -0.1607, -0.3119, 0.6533, -0.1841, -0.41169998, 0.63019997, -0.34109998, -0.6778, 0.92899996, -0.21589999, -0.5588, 0.57409996, -0.2393, -0.41169998, 0.63019997, -0.34109998, -0.53069997, 0.98499995, -0.3177, -0.6778, 0.92899996, -0.21589999, -0.5588, 0.57409996, -0.2393, -0.578, 0.9521, -0.0589, -0.459, 0.5972, -0.0823, -0.5588, 0.57409996, -0.2393, -0.6778, 0.92899996, -0.21589999, -0.578, 0.9521, -0.0589, -0.43089998, 1.0081999, -0.1607, -0.41169998, 0.63019997, -0.34109998, -0.3119, 0.6533, -0.1841, -0.43089998, 1.0081999, -0.1607, -0.53069997, 0.98499995, -0.3177, -0.41169998, 0.63019997, -0.34109998, 0.55399996, -0.2261, -0.72639996, 0.3281, -0.276, -0.856, 0.3791, -0.2708, -0.6756, 0.55399996, -0.2261, -0.72639996, 0.50299996, -0.2313, -0.90669996, 0.3281, -0.276, -0.856, 0.2392, 0.088, -0.84129995, 0.4651, 0.1379, -0.71169996, 0.29029998, 0.0932, -0.66099995, 0.2392, 0.088, -0.84129995, 0.4141, 0.1327, -0.8921, 0.4651, 0.1379, -0.71169996, 0.29029998, 0.0932, -0.66099995, 0.55399996, -0.2261, -0.72639996, 0.3791, -0.2708, -0.6756, 0.29029998, 0.0932, -0.66099995, 0.4651, 0.1379, -0.71169996, 0.55399996, -0.2261, -0.72639996, 0.50299996, -0.2313, -0.90669996, 0.2392, 0.088, -0.84129995, 0.3281, -0.276, -0.856, 0.50299996, -0.2313, -0.90669996, 0.4141, 0.1327, -0.8921, 0.2392, 0.088, -0.84129995, 0.3281, -0.276, -0.856, 0.29029998, 0.0932, -0.66099995, 0.3791, -0.2708, -0.6756, 0.3281, -0.276, -0.856, 0.2392, 0.088, -0.84129995, 0.29029998, 0.0932, -0.66099995, 0.4651, 0.1379, -0.71169996, 0.50299996, -0.2313, -0.90669996, 0.55399996, -0.2261, -0.72639996, 0.4651, 0.1379, -0.71169996, 0.4141, 0.1327, -0.8921, 0.50299996, -0.2313, -0.90669996, -0.18159999, -0.649, -0.45929998, -0.3241, -0.8725, -0.45479998, -0.35639998, -0.69369996, -0.4086, -0.18159999, -0.649, -0.45929998, -0.14919999, -0.8278, -0.50549996, -0.3241, -0.8725, -0.45479998, -0.4429, -0.8039, -0.8038, -0.3004, -0.5803, -0.80829996, -0.47529998, -0.62509996, -0.7576, -0.4429, -0.8039, -0.8038, -0.2681, -0.7592, -0.8545, -0.3004, -0.5803, -0.80829996, -0.47529998, -0.62509996, -0.7576, -0.18159999, -0.649, -0.45929998, -0.35639998, -0.69369996, -0.4086, -0.47529998, -0.62509996, -0.7576, -0.3004, -0.5803, -0.80829996, -0.18159999, -0.649, -0.45929998, -0.14919999, -0.8278, -0.50549996, -0.4429, -0.8039, -0.8038, -0.3241, -0.8725, -0.45479998, -0.14919999, -0.8278, -0.50549996, -0.2681, -0.7592, -0.8545, -0.4429, -0.8039, -0.8038, -0.3241, -0.8725, -0.45479998, -0.47529998, -0.62509996, -0.7576, -0.35639998, -0.69369996, -0.4086, -0.3241, -0.8725, -0.45479998, -0.4429, -0.8039, -0.8038, -0.47529998, -0.62509996, -0.7576, -0.3004, -0.5803, -0.80829996, -0.14919999, -0.8278, -0.50549996, -0.18159999, -0.649, -0.45929998, -0.3004, -0.5803, -0.80829996, -0.2681, -0.7592, -0.8545, -0.14919999, -0.8278, -0.50549996)
 
 [node name="Map" type="Node3D" unique_id=1048586646]
+script = ExtResource("1_sdqdp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=270787838]
 transform = Transform3D(0.49999997, -0.6889003, 0.5248014, 0, 0.6059884, 0.7954735, -0.86602545, -0.39773673, 0.30299416, 0, 0, 0)
@@ -296,7 +298,7 @@ shadow_enabled = true
 environment = SubResource("Environment_yc8cd")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=474376711]
-_spawnable_scenes = PackedStringArray("uid://bn0xhuc4th847", "uid://iq7j8ho3twc3")
+_spawnable_scenes = PackedStringArray("uid://bn0xhuc4th847", "uid://dmmpdore6qt8e", "uid://d0sf5lyrc2p63")
 spawn_path = NodePath("..")
 script = ExtResource("1_rloe5")
 network_player = ExtResource("2_yh3a2")
@@ -322,7 +324,7 @@ spawner = NodePath("../MultiplayerSpawner")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67593, 0, -0.38981676)
 starting_size = 30.0
 shrink_amount = 7.5
-wait_time = 40.0
+wait_time = 30.0
 
 [node name="Collision" type="StaticBody3D" parent="." unique_id=1956373143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.438016, 0, -5.0958376)
@@ -486,6 +488,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1265395, -4.7683716e-07, -1
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1053483437]
 transform = Transform3D(0.95183015, 0.04680891, -0.30303183, 0, 0.98827904, 0.15265813, 0.30662575, -0.1453046, 0.9406738, 2.500894, 0.44412583, -0.5622778)
 
+[node name="EndGameCamera" type="Camera3D" parent="." unique_id=1037939325]
+transform = Transform3D(1, 0, 0, 0, 0.85236645, 0.5229449, 0, -0.5229449, 0.85236645, 2.500894, 2.5831096, 2.109142)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1688268285]
 
 [node name="Menu" type="Control" parent="CanvasLayer" unique_id=579095964]
@@ -496,7 +501,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Menu" unique_id=108954456]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu" unique_id=765471983]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartGame" type="Button" parent="CanvasLayer/Menu/VBoxContainer" unique_id=1241549299]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Game"
+
+[node name="StopGame" type="Button" parent="CanvasLayer/Menu/VBoxContainer" unique_id=799630100]
+layout_mode = 2
+text = "Stop Game
+"
+
+[node name="MenuContainer" type="MarginContainer" parent="CanvasLayer/Menu" unique_id=108954456]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -508,45 +529,44 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Menu/MarginContainer" unique_id=119713014]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Menu/MenuContainer" unique_id=119713014]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Menu/MarginContainer/PanelContainer" unique_id=1799583103]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Menu/MenuContainer/PanelContainer" unique_id=1799583103]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer" unique_id=1794585122]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer" unique_id=1794585122]
 layout_mode = 2
 alignment = 1
 
-[node name="ServerBtn" type="Button" parent="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1423359437]
+[node name="ServerBtn" type="Button" parent="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1423359437]
 layout_mode = 2
 text = "Server"
 
-[node name="ClientBtn" type="Button" parent="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=172671511]
+[node name="ClientBtn" type="Button" parent="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=172671511]
 layout_mode = 2
 text = "Client"
 
-[node name="IP" type="LineEdit" parent="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=815823120]
+[node name="IP" type="LineEdit" parent="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=815823120]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 placeholder_text = "IP: localhost"
 alignment = 1
 
-[node name="Port" type="LineEdit" parent="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=247345251]
+[node name="Port" type="LineEdit" parent="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=247345251]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 placeholder_text = "Port: 42069"
 alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ServerBtn" to="NetworkHandler" method="_on_server_btn_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ServerBtn" to="CanvasLayer/Menu" method="hide"]
-[connection signal="pressed" from="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClientBtn" to="NetworkHandler" method="_on_client_btn_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ClientBtn" to="CanvasLayer/Menu" method="hide"]
+[connection signal="pressed" from="CanvasLayer/Menu/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer/VBoxContainer/ServerBtn" to="NetworkHandler" method="_on_server_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuContainer/PanelContainer/MarginContainer/VBoxContainer/ClientBtn" to="NetworkHandler" method="_on_client_btn_pressed"]

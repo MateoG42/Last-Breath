@@ -7,6 +7,6 @@
 script = ExtResource("1_ockn8")
 attack_range = 0.4
 is_melee = true
-weapon_id = 1
 sprite = ExtResource("2_jwlbc")
+item_id = 1
 metadata/_custom_type_script = "uid://6bf7q1cy2mec"

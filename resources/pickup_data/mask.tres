@@ -7,4 +7,5 @@
 script = ExtResource("1_4udka")
 name = "Mask"
 sprite = ExtResource("2_c8uoi")
+item_id = 2
 metadata/_custom_type_script = "uid://87jpv82np5o4"
