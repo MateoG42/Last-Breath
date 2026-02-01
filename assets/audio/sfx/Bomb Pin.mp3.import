@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w6jeq2dwaosi"
+path="res://.godot/imported/Bomb Pin.mp3-73c0a8b5c799af7164b1f220f5889672.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Bomb Pin.mp3"
+dest_files=["res://.godot/imported/Bomb Pin.mp3-73c0a8b5c799af7164b1f220f5889672.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

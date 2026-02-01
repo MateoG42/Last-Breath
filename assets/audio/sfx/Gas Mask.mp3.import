@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bicqvo8dwfxoj"
+path="res://.godot/imported/Gas Mask.mp3-f16d415a459d4935c6d4971753cedfd1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Gas Mask.mp3"
+dest_files=["res://.godot/imported/Gas Mask.mp3-f16d415a459d4935c6d4971753cedfd1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

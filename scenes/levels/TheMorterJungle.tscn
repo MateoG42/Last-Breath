@@ -502,10 +502,12 @@ offset_bottom = 40.0
 
 [node name="StartGame" type="Button" parent="CanvasLayer/Menu/VBoxContainer" unique_id=1241549299]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Start Game"
 
 [node name="StopGame" type="Button" parent="CanvasLayer/Menu/VBoxContainer" unique_id=799630100]
+visible = false
 layout_mode = 2
 text = "Stop Game
 "

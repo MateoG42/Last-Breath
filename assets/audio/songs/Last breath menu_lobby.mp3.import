@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drk0kyico8hj7"
+path="res://.godot/imported/Last breath menu_lobby.mp3-002a8e72eb8fad16fa8a2d27c402b21d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/songs/Last breath menu_lobby.mp3"
+dest_files=["res://.godot/imported/Last breath menu_lobby.mp3-002a8e72eb8fad16fa8a2d27c402b21d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

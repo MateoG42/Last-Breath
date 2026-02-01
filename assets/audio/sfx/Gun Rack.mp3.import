@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blii1w5ahnfmy"
+path="res://.godot/imported/Gun Rack.mp3-d1495244bbf4abb0c0f96f3ee3bcae49.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Gun Rack.mp3"
+dest_files=["res://.godot/imported/Gun Rack.mp3-d1495244bbf4abb0c0f96f3ee3bcae49.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
