@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cxvmcf4y17olb"]
+
+[ext_resource type="Script" uid="uid://6bf7q1cy2mec" path="res://resources/pickup_data/weapon_data.gd" id="1_en8od"]
+[ext_resource type="Texture2D" uid="uid://b212lf77wnnsw" path="res://assets/Bat.png" id="2_en8od"]
+
+[resource]
+script = ExtResource("1_en8od")
+attack_range = 0.7
+is_melee = true
+sprite = ExtResource("2_en8od")
+item_id = 3
+metadata/_custom_type_script = "uid://6bf7q1cy2mec"

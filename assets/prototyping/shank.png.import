@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvuyyo2boq1an"
-path.s3tc="res://.godot/imported/protomask.png-d5041b1e680e8c910690d11448850666.s3tc.ctex"
-path.etc2="res://.godot/imported/protomask.png-d5041b1e680e8c910690d11448850666.etc2.ctex"
+uid="uid://bwhsj0ropr0i2"
+path.s3tc="res://.godot/imported/shank.png-6e0fa8da240b9b5eb4bcdc479e0a2529.s3tc.ctex"
+path.etc2="res://.godot/imported/shank.png-6e0fa8da240b9b5eb4bcdc479e0a2529.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/protomask.png"
-dest_files=["res://.godot/imported/protomask.png-d5041b1e680e8c910690d11448850666.s3tc.ctex", "res://.godot/imported/protomask.png-d5041b1e680e8c910690d11448850666.etc2.ctex"]
+source_file="res://assets/prototyping/shank.png"
+dest_files=["res://.godot/imported/shank.png-6e0fa8da240b9b5eb4bcdc479e0a2529.s3tc.ctex", "res://.godot/imported/shank.png-6e0fa8da240b9b5eb4bcdc479e0a2529.etc2.ctex"]
 
 [params]
 

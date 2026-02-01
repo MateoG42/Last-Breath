@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iq7j8ho3twc3"]
 
 [ext_resource type="Script" uid="uid://bjltukac8lrru" path="res://scenes/map_objects/pickup.gd" id="1_xdstx"]
-[ext_resource type="Texture2D" uid="uid://bwhsj0ropr0i2" path="res://assets/shank.png" id="2_aqvoi"]
+[ext_resource type="Texture2D" uid="uid://bwhsj0ropr0i2" path="res://assets/prototyping/shank.png" id="2_aqvoi"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_v45ci"]
 height = 0.5

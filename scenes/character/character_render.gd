@@ -12,7 +12,7 @@ var last_direction
 		current_weapon = new_id
 		%Weapon.texture = weapon_textures[current_weapon]
 		
-var weapon_textures = [null, preload("res://assets/shank.png")]
+var weapon_textures = [null, preload("res://assets/A_KNIFE.png"), preload('res://assets/MASK.png'), preload("res://assets/Bat.png"), preload('res://assets/Sawed_off.png')]
 
 
 func _process(_delta: float) -> void:

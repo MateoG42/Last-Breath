@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://csfygtfqqr2r0"]
 
 [ext_resource type="Script" uid="uid://6bf7q1cy2mec" path="res://resources/pickup_data/weapon_data.gd" id="1_ockn8"]
-[ext_resource type="Texture2D" uid="uid://bwhsj0ropr0i2" path="res://assets/shank.png" id="2_jwlbc"]
+[ext_resource type="Texture2D" uid="uid://chjdipo3ihyau" path="res://assets/A_KNIFE.png" id="2_ockn8"]
 
 [resource]
 script = ExtResource("1_ockn8")
 attack_range = 0.4
 is_melee = true
-sprite = ExtResource("2_jwlbc")
+sprite = ExtResource("2_ockn8")
 item_id = 1
 metadata/_custom_type_script = "uid://6bf7q1cy2mec"

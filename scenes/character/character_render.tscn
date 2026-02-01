@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8qkn77w5l3ic" path="res://assets/player/Player_Sprite-sheet.png" id="2_28yyx"]
 [ext_resource type="Texture2D" uid="uid://d2kemkbaiiw4f" path="res://assets/player/Player_Sprite_Masked.png" id="3_2l53l"]
 [ext_resource type="Texture2D" uid="uid://bxdk3kmt246f1" path="res://assets/player/Player_Arm.png" id="3_28yyx"]
-[ext_resource type="Texture2D" uid="uid://cvuyyo2boq1an" path="res://assets/protomask.png" id="4_28yyx"]
+[ext_resource type="Texture2D" uid="uid://cvuyyo2boq1an" path="res://assets/prototyping/protomask.png" id="4_28yyx"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_28yyx"]
 properties/0/path = NodePath("PlayerSprite/ObjectPivot:rotation")
@@ -411,9 +411,9 @@ offset = Vector2(7.985, 0)
 [node name="Weapon" type="Sprite2D" parent="PlayerSprite/ObjectPivot/Arm" unique_id=1641501413]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(17.999998, -0.010568619)
+position = Vector2(18.000584, 0.98943114)
 rotation = 0.32907853
-offset = Vector2(0, -10.52)
+offset = Vector2(0, -7.07)
 
 [node name="Mask" type="Sprite2D" parent="PlayerSprite" unique_id=2067179847]
 unique_name_in_owner = true

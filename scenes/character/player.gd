@@ -12,7 +12,7 @@ const PUNCH_RANGE = 0.3
 var item_data = null
 @export var held_item_id: WeaponData.WeaponID
 
-var item_pickups = [null, preload('res://scenes/map_objects/knife.tscn'), preload("res://scenes/map_objects/mask.tscn")]
+var item_pickups = [null, preload('res://scenes/map_objects/knife.tscn'), preload("res://scenes/map_objects/mask.tscn"), preload('res://scenes/map_objects/bat.tscn')]
 
 var game_started = false
 
