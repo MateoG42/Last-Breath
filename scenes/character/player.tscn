@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bn0xhuc4th847"]
 
 [ext_resource type="Script" uid="uid://c1ymvqj477lag" path="res://scenes/character/player.gd" id="1_tum32"]
+[ext_resource type="AudioStream" uid="uid://ca84ubymapydx" path="res://assets/audio/sfx/Hit.mp3" id="2_bnvp8"]
 [ext_resource type="PackedScene" uid="uid://b48hx24kxhkc0" path="res://scenes/character/character_render.tscn" id="3_0vjlc"]
+[ext_resource type="AudioStream" uid="uid://da5ckoek1ed1u" path="res://assets/audio/sfx/Bat Swing.mp3" id="3_1y732"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tum32"]
 properties/0/path = NodePath(".:position")
@@ -25,6 +27,8 @@ radius = 0.3
 collision_mask = 7
 script = ExtResource("1_tum32")
 character_render = NodePath("CharaterSubviewport/CharacterRender")
+hit_sound = ExtResource("2_bnvp8")
+swing_sound = ExtResource("3_1y732")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=232064748]
 replication_config = SubResource("SceneReplicationConfig_tum32")
@@ -62,6 +66,10 @@ shape = SubResource("SphereShape3D_tum32")
 
 [node name="DeathTimer" type="Timer" parent="." unique_id=1718925937]
 wait_time = 5.0
+
+[node name="PickupTimer" type="Timer" parent="." unique_id=2123674813]
+wait_time = 0.5
+one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=361808191]
 

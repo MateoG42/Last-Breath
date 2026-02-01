@@ -19,4 +19,9 @@ func _on_body_entered(body: Node3D) -> void:
 
 @rpc('any_peer','call_local')
 func remove_item():
+	visible = false
+	set_deferred('monitoring', false)
+	set_deferred('monitorable', false)
+	$AudioStreamPlayer3D.play()
+	await $AudioStreamPlayer3D.finished
 	self.queue_free()

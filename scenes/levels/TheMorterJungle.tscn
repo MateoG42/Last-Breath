@@ -292,9 +292,12 @@ data = PackedVector3Array(0.1875, 0.2188, -0.0938, 0.1875, 0.0313, 0.0938, 0.187
 script = ExtResource("1_sdqdp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=789061565]
+volume_db = -10.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=270787838]
 transform = Transform3D(0.49999997, -0.6889003, 0.5248014, 0, 0.6059884, 0.7954735, -0.86602545, -0.39773673, 0.30299416, 0, 0, 0)
+light_color = Color(0.63982207, 0.7397839, 0.54025346, 1)
+light_volumetric_fog_energy = 3.0
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=495705818]

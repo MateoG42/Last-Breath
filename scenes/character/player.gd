@@ -18,6 +18,9 @@ var game_started = false
 
 var in_fog = false
 
+@export var hit_sound: AudioStream
+@export var swing_sound: AudioStream
+
 
 func _enter_tree() -> void:
 	var id = name.to_int()
@@ -32,6 +35,7 @@ func _process(_delta: float) -> void:
 		rotate_item()
 		if Input.is_action_just_pressed("attack"):
 			attack.rpc()
+			play_sound.rpc(swing_sound)
 		
 		if Input.is_action_just_pressed("drop_item"):
 			if item_data:
@@ -55,12 +59,16 @@ func handle_movement():
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	var final_speed = speed
+	if item_data is MaskData:
+		final_speed *= 0.75
+	
 	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
+		velocity.x = direction.x * final_speed
+		velocity.z = direction.z * final_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, final_speed)
+		velocity.z = move_toward(velocity.z, 0, final_speed)
 
 	move_and_slide()
 
@@ -81,6 +89,8 @@ func check_attack_collision():
 func attack_hit():
 	if item_data:
 		drop_item()
+	
+	play_sound.rpc(hit_sound)
 
 
 func rotate_item():
@@ -101,7 +111,7 @@ func _on_character_render_swipe() -> void:
 func grab_item(item: ItemData) -> bool:
 	if is_multiplayer_authority():
 		print(item_data)
-		if !item_data:
+		if !item_data and $PickupTimer.is_stopped():
 			if item is WeaponData:
 				pickup_weapon(item)
 			if item is MaskData:
@@ -118,6 +128,7 @@ func drop_item():
 	spawn_item.rpc(multiplayer.get_unique_id(), held_item_id)
 	
 	item_data = null
+	$PickupTimer.start()
 
 @rpc('call_local')
 func spawn_item(pid, item_id):
@@ -157,6 +168,11 @@ func die():
 	if is_multiplayer_authority():
 		get_parent().set_camera()
 	queue_free()
+
+@rpc('call_local')
+func play_sound(sound):
+	$AudioStreamPlayer3D.stream = sound
+	$AudioStreamPlayer3D.play()
 
 
 func _on_game_started():
