@@ -11,7 +11,7 @@ const PUNCH_RANGE = 0.3
 
 var item_data = null
 
-var pickup_scene = preload('res://scenes/map_objects/pickup.tscn')
+var pickup_scene = preload('res://scenes/map_objects/knife.tscn')
 
 
 func _enter_tree() -> void:
@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 	if is_multiplayer_authority():
 		rotate_item()
 		if Input.is_action_just_pressed("attack"):
-			character_render.melee_attack()
+			attack.rpc()
 		
 		if Input.is_action_just_pressed("drop_item"):
 			if item_data:
@@ -53,13 +53,23 @@ func handle_movement():
 
 	move_and_slide()
 
+@rpc("call_local")
+func attack():
+	character_render.melee_attack()
+
 
 func check_attack_collision():
-	var bodies: Array = %MeleeHitbox.get_overlapping_bodies()
-	bodies.erase(self)
-	for body in bodies:
-		if body.has_method('attack_hit'):
-			body.attack_hit()
+	if is_multiplayer_authority():
+		var bodies: Array = %MeleeHitbox.get_overlapping_bodies()
+		bodies.erase(self)
+		for body in bodies:
+			if body.has_method('attack_hit'):
+				body.attack_hit.rpc_id(body.get_multiplayer_authority())
+
+@rpc('any_peer')
+func attack_hit():
+	if item_data:
+		drop_item()
 
 
 func rotate_item():
@@ -78,13 +88,15 @@ func _on_character_render_swipe() -> void:
 
 
 func grab_item(item: ItemData) -> bool:
-	if !item_data:
-		if item is WeaponData:
-			pickup_weapon(item)
-		if item is MaskData:
-			pickup_mask(item)
-		item_data = item
-		return true
+	if is_multiplayer_authority():
+		print(item_data)
+		if !item_data:
+			if item is WeaponData:
+				pickup_weapon(item)
+			if item is MaskData:
+				pickup_mask(item)
+			item_data = item
+			return true
 	return false
 
 
@@ -92,12 +104,16 @@ func drop_item():
 	character_render.unequip()
 	%MeleeHitbox/AttackCollision.shape.radius = PUNCH_RANGE
 	
-	var new_pickup: Pickup = pickup_scene.instantiate()
-	new_pickup.item_data = item_data
+	spawn_item.rpc(multiplayer.get_unique_id())
 	
-	get_tree().root.add_child(new_pickup)
-	new_pickup.global_position = global_position + Vector3(0, 0, 0.5)
 	item_data = null
+
+@rpc('call_local')
+func spawn_item(pid):
+	var item: Pickup = pickup_scene.instantiate()
+	item.set_multiplayer_authority(pid)
+	get_parent().add_child(item)
+	item.global_position = global_position + Vector3(0, 0, 1)
 
 
 func pickup_weapon(weapon_dat: WeaponData):

@@ -38,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_tum32")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1030898202]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.9429421, 2.220844)
+transform = Transform3D(1, 0, 0, 0, 0.7400186, 0.6725864, 0, -0.6725864, 0.7400186, 0, 2.6643558, 2.220844)
 size = 5.0
 
 [node name="CharaterSubviewport" type="SubViewport" parent="." unique_id=1327488289]

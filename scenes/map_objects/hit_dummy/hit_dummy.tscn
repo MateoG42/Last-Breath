@@ -19,6 +19,7 @@ shape = SubResource("CylinderShape3D_sv6oj")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1866919910]
 transform = Transform3D(2, 0, 0, 0, 1.9999999, 0, 0, 0, 1.9999999, 0, 0.59669656, 0)
 modulate = Color(0.71477765, 0.4046694, 0.10610274, 1)
+billboard = 1
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("AtlasTexture_vu4m3")

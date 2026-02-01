@@ -1,5 +1,6 @@
 extends Node
 
+@export var spawner: MultiplayerSpawner
 
 const IP_ADDRESS: String = 'localhost'
 const PORT: int = 42069
@@ -11,6 +12,8 @@ func start_server() -> void:
 	peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT)
 	multiplayer.multiplayer_peer = peer
+	
+	spawner.spawn_player(multiplayer.get_unique_id())
 
 
 func start_client() -> void:

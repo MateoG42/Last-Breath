@@ -2,18 +2,11 @@
 class_name Pickup
 extends Area3D
 
-@export var item_data: ItemData:
-	set(new_item):
-		item_data = new_item
-		$Sprite3D.texture = item_data.sprite
-
+@export var item_data: ItemData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
-
-func _enter_tree() -> void:
+	await $Sprite3D.ready
 	$Sprite3D.texture = item_data.sprite
 
 
@@ -23,5 +16,8 @@ func _on_body_entered(body: Node3D) -> void:
 		item_grabbed = body.grab_item(item_data)
 	
 	if item_grabbed:
-		self.queue_free()
-		
+		remove_item.rpc()
+
+@rpc('any_peer','call_local')
+func remove_item():
+	self.queue_free()
